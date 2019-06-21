@@ -2,6 +2,7 @@ package com.example.mynew;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.animation.AlphaAnimation;
@@ -15,7 +16,7 @@ import com.example.mynew.activity.GuideActivity;
 import com.example.mynew.activity.Main2Activity;
 import com.example.mynew.utils.CacheUtils;
 
-public class SplashActivity extends AppCompatActivity {
+public class SplashActivity extends Activity {
     //静态常量
     public static final String START_MAIN = "start_main";
     private RelativeLayout splahs_root;

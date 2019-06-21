@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -24,7 +25,7 @@ import com.example.mynew.utils.DensityUtil;
 
 import java.util.ArrayList;
 
-public class GuideActivity extends AppCompatActivity {
+public class GuideActivity extends Activity {
     private int widthdpi;
     private int heightdpi;
 
