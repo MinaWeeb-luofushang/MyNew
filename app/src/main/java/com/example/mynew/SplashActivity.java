@@ -12,6 +12,7 @@ import android.view.animation.ScaleAnimation;
 import android.widget.RelativeLayout;
 
 import com.example.mynew.activity.GuideActivity;
+import com.example.mynew.activity.Main2Activity;
 import com.example.mynew.utils.CacheUtils;
 
 public class SplashActivity extends AppCompatActivity {
@@ -47,7 +48,7 @@ public class SplashActivity extends AppCompatActivity {
         animation.addAnimation(scale);
         animation.addAnimation(rotate);
         //动画时间
-        animation.setDuration(5000);
+        animation.setDuration(2000);
         //设置给哪个视图
         splahs_root.startAnimation(animation);
         //设置动画监听
@@ -66,13 +67,15 @@ public class SplashActivity extends AppCompatActivity {
         public void onAnimationEnd(Animation animation) {
             //判断是否直接进入主页面
             boolean isStartMain = CacheUtils.getBoolean(SplashActivity.this,START_MAIN);
-            System.out.println(isStartMain);
+            Intent intent;
             if (isStartMain){
                 //如果是
-                Intent intent = new Intent(SplashActivity.this, GuideActivity.class);
+                 intent = new Intent(SplashActivity.this, Main2Activity.class);
                 startActivity(intent);
             }else {
                 //如果不是，进入引导页面
+                 intent = new Intent(SplashActivity.this, GuideActivity.class);
+                startActivity(intent);
             }
             //关闭sqlash页面
             finish();
