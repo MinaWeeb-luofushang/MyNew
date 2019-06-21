@@ -20,10 +20,15 @@ import android.widget.RelativeLayout;
 import com.example.mynew.R;
 import com.example.mynew.SplashActivity;
 import com.example.mynew.utils.CacheUtils;
+import com.example.mynew.utils.DensityUtil;
 
 import java.util.ArrayList;
 
 public class GuideActivity extends AppCompatActivity {
+    private int widthdpi;
+    private int heightdpi;
+
+
     private ViewPager view_pager;
     private Button btn_start_main;
     private LinearLayout ll_point_group;
@@ -51,6 +56,8 @@ public class GuideActivity extends AppCompatActivity {
                 R.drawable.guide_2,
                 R.drawable.guide_3,
         };
+        widthdpi = DensityUtil.dip2px(this,10);
+        heightdpi = DensityUtil.dip2px(this,10);
         imageViews = new ArrayList<>();
         for (int i=0;i<ids.length;i++){
             ImageView imageView = new ImageView(this);
@@ -63,12 +70,13 @@ public class GuideActivity extends AppCompatActivity {
             point.setBackgroundResource(R.drawable.point_normal);
             //显示
             //单位像素
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(20,20);
-            point.setLayoutParams(params);
-            //设置间距
+            //将dp转成像素
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(widthdpi,heightdpi);
+             //设置间距
             if (i!=0){
-                params.leftMargin=20;
+                params.leftMargin=widthdpi;
             }
+            point.setLayoutParams(params);
             //添加到线性布局里面
             ll_point_group.addView(point);
         }
